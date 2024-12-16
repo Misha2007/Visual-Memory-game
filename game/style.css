@@ -1,0 +1,79 @@
+body {
+  margin: 0 auto;
+}
+
+#main-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#headings {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.block {
+  width: 100px;
+  height: 100px;
+  background: #004;
+  margin: 20px;
+}
+
+.fa-heart {
+  margin: 5px;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background: rgb(235, 235, 253);
+  border: #004 1px solid;
+  width: 200px;
+  height: 70px;
+  margin: 20px;
+  font-size: 20px;
+}
+
+.fa-heart {
+  color: #f00;
+}
+
+/* Animtaion */
+
+.block.active {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  0% {
+    background-color: #004;
+  }
+  25% {
+    background-color: #004;
+  }
+  50% {
+    background-color: rgb(235, 235, 253);
+  }
+  75% {
+    background-color: rgb(235, 235, 253);
+  }
+  100% {
+    background-color: #004;
+  }
+}
