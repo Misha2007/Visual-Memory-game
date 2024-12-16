@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+}
+
+#frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1c1f26, #243447);
+}
+
+#main-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #2a2f38;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+#headings {
+  display: flex;
+  justify-content: space-evenly;
+  color: #fff;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.block {
+  width: 100px;
+  height: 100px;
+  background: rgb(213, 213, 255);
+  margin: 20px;
+}
+
+.fa-heart {
+  margin: 5px;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background: rgb(235, 235, 253);
+  border: #004 1px solid;
+  width: 200px;
+  height: 70px;
+  margin: 20px;
+  font-size: 20px;
+}
+
+.fa-heart {
+  color: #f00;
+}
+
+/* Animtaion */
+
+.block.active {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  0% {
+    background-color: #004;
+  }
+  25% {
+    background-color: #004;
+  }
+  50% {
+    background-color: rgb(235, 235, 253);
+  }
+  75% {
+    background-color: rgb(235, 235, 253);
+  }
+  100% {
+    background-color: #004;
+  }
+}
