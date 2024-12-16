@@ -5,90 +5,88 @@
   box-sizing: border-box;
 }
 
-/* Background styling */
+/* Outer background styling */
 .all {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #1c1f26, #243447);
+  background: linear-gradient(
+    135deg,
+    #1c1f26,
+    #243447
+  ); /* Blackish-to-dark blue */
   color: #fff;
   font-family: Arial, sans-serif;
   text-align: center;
 }
 
-/* Home section styling */
-.home {
-  margin-bottom: 20px;
+/* Inner background styling for Home */
+.inner-background {
+  padding: 20px;
+  background: #2a2f38; /* Dark gray-blue */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  text-align: center;
 }
 
+/* Icon styling */
 .icon {
-  font-size: 80px; /* Increase icon size */
-  color: #48ff00; /* Add contrasting color */
+  font-size: 120px; /* Bigger icon */
+  color: #48ff00; /* Bright green */
+  margin-bottom: 10px;
+}
+
+/* Text styling for title and subtitle */
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
 /* Button container */
 .btn-container {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
 }
 
-/* Button styles */
+/* Button styling */
 .btn {
   position: relative;
-  padding: 15px 30px;
-  font-size: 18px;
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff;
-  background-color: #333;
+  background: linear-gradient(135deg, #48ff00, #00ffd5); /* Vibrant gradient */
   border: none;
   border-radius: 8px;
   cursor: pointer;
   overflow: hidden;
-  z-index: 1;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; /* Smooth interactions */
+  box-shadow: 0 4px 15px rgba(0, 255, 213, 0.4); /* Subtle glow effect */
 }
 
-.btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #ff00c8,
-    #ff0000
-  );
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(8px);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 8px;
-}
-
-.btn:hover::before {
-  opacity: 1;
-  animation: glowing 20s infinite linear;
-}
-
+/* Button hover effect */
 .btn:hover {
-  color: #000;
-  background-color: #fff;
-  font-weight: bold;
+  background: linear-gradient(135deg, #00ffd5, #48ff00); /* Reverse gradient */
+  transform: scale(1.05); /* Slight scaling for emphasis */
+  box-shadow: 0 6px 20px rgba(0, 255, 213, 0.6); /* Stronger glow */
 }
 
-/* Glowing effect animation */
+/* Button active effect */
+.btn:active {
+  transform: scale(0.95); /* Slight shrink effect */
+  box-shadow: 0 3px 10px rgba(0, 255, 213, 0.3); /* Reduced glow */
+}
+
+/* Glowing effect animation for button hover */
 @keyframes glowing {
   0% {
     background-position: 0 0;
