@@ -1,16 +1,29 @@
 body {
-  margin: 0 auto;
+  margin: 0;
+}
+
+#frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #1c1f26, #243447);
 }
 
 #main-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background: #2a2f38;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 #headings {
   display: flex;
   justify-content: space-evenly;
+  color: #fff;
 }
 
 #container {
@@ -24,7 +37,7 @@ body {
 .block {
   width: 100px;
   height: 100px;
-  background: #004;
+  background: rgb(213, 213, 255);
   margin: 20px;
 }
 
