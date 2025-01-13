@@ -21,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/game" element={<Game />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/rules" element={<Rules />} />
       </Routes>
     </BrowserRouter>

@@ -176,6 +176,33 @@ const Game = () => {
           </div>
         </div>
       </div>
+      {/* <div id="second_column">
+        <div id="leaderboard">
+          <h3>Leaderboard</h3>
+          <ul>
+            {leaderboardData.map((entry, index) => (
+              <li key={index}>
+                {entry.username} - Level: {entry.level}, Time: {entry.timer}s
+              </li>
+            ))}
+          </ul>
+        </div>
+        {isGameOver && (
+          <div id="game-over-modal">
+            <h2>Game Over</h2>
+            <p>Enter your username to save your score:</p>
+            <div id="username-input">
+              <input
+                type="text"
+                placeholder="User-001"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <button onClick={handleGameOver}>Submit</button>
+            </div>
+          </div>
+        )}
+      </div> */}
     </div>
   );
 };
