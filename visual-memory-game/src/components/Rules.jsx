@@ -1,9 +1,5 @@
 import "./Game.css";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaHeart } from "react-icons/fa";
-import { CiHeart } from "react-icons/ci";
-import Card from "./Card";
 
 const Rules = () => {
   return (
