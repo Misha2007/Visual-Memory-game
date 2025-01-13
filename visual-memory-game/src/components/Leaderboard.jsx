@@ -5,7 +5,6 @@ const Game = () => {
   const [level, setLevel] = useState(2);
   const [timer, setTimer] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
-  const [leaderboardData, setLeaderboardData] = useState([]);
   const [isGameRunning, setIsGameRunning] = useState(true);
   const [isGameOver, setIsGameOver] = useState(false);
   const [username, setUsername] = useState(
@@ -34,11 +33,9 @@ const Game = () => {
 
   const handleReset = () => {
     setActiveStates(generateRandomCards(level));
-    setHearts([true, true, true]);
     setTimer(0);
     setIsGameRunning(true);
     setIsGameOver(false);
-    setLevel;
   };
 
   useEffect(() => {
@@ -53,16 +50,6 @@ const Game = () => {
     return () => clearInterval(intervalId);
   }, [isGameRunning, intervalId]);
 
-  const fetchLeaderboardData = async () => {
-    try {
-      const response = await fetch("http://localhost:3001/leaderboard");
-      const data = await response.json();
-      setLeaderboardData(data);
-    } catch (error) {
-      console.error("Error fetching leaderboard data:", error);
-    }
-  };
-
   const saveLeaderboardData = async (data) => {
     try {
       await fetch("http://localhost:3001/leaderboard", {
@@ -74,10 +61,6 @@ const Game = () => {
       console.error("Error saving leaderboard data:", error);
     }
   };
-
-  useEffect(() => {
-    fetchLeaderboardData();
-  }, []);
 
   useEffect(() => {
     if (username) {
@@ -92,9 +75,6 @@ const Game = () => {
     }
 
     const newEntry = { username, level, timer };
-    const updatedLeaderboard = [...leaderboardData, newEntry];
-
-    setLeaderboardData(updatedLeaderboard);
     saveLeaderboardData(newEntry);
 
     handleReset();
@@ -103,16 +83,6 @@ const Game = () => {
   return (
     <div id="frame">
       <div id="second_column">
-        <div id="leaderboard">
-          <h3>Leaderboard</h3>
-          <ul>
-            {leaderboardData.map((entry, index) => (
-              <li key={index}>
-                {entry.username} - Level: {entry.level}, Time: {entry.timer}s
-              </li>
-            ))}
-          </ul>
-        </div>
         {isGameOver && (
           <div id="game-over-modal">
             <h2>Game Over</h2>
