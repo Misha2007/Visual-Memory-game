@@ -17,13 +17,12 @@ function App() {
         <nav>
           <a href="/rules">Rules</a>
           <a href="/">Rules</a>
-          <a href="/leaderboard">Leader Board</a>
+
         </nav>
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/game" element={<Game />} />
-        <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/rules" element={<Rules />} />
       </Routes>
     </BrowserRouter>

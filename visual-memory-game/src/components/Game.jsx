@@ -17,7 +17,6 @@ const Game = () => {
     localStorage.getItem("username") || ""
   );
 
-  // Generate random cards based on the level
   const generateRandomCards = (level) => {
     const numCards = 16 + Math.floor(level / 4) * 4;
     let card_array = [];
@@ -43,7 +42,6 @@ const Game = () => {
     setTimer(0);
     setIsGameRunning(true);
     setIsGameOver(false);
-    setLevel;
   };
 
   const handleCardClick = (isActive, index) => {
@@ -71,8 +69,6 @@ const Game = () => {
         if (newHearts.every((heart) => !heart)) {
           setIsGameRunning(false);
           setIsGameOver(true);
-          setLevel(2);
-          setTimer(0);
         }
         return newHearts;
       });
@@ -176,7 +172,7 @@ const Game = () => {
           </div>
         </div>
       </div>
-      {/* <div id="second_column">
+      <div id="second_column">
         <div id="leaderboard">
           <h3>Leaderboard</h3>
           <ul>
@@ -202,7 +198,7 @@ const Game = () => {
             </div>
           </div>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };
