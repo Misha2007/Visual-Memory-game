@@ -134,9 +134,28 @@ button:last-child {
   margin-bottom: 20px;
 }
 
-#second_column {
-  margin: 20px;
-  width: 500px;
+.rules {
+  display: flex;
+  align-items: center;
+}
+
+.rule {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.rules-3d {
+  margin-bottom: 50px;
+  text-shadow: -1px 1px #87997e, -2px 2px #87997e, -3px 3px #87997e,
+    -4px 4px #87997e, -5px 5px #87997e, -6px 6px #87997e, -7px 7px #87997e;
+  font-family: "pixeplay";
+  font-size: clamp(1rem, -3.1875rem + 13.4vw, 5.375rem);
+  src: url("/pixelplay.ttf");
+  line-height: clamp(1rem, -1.625rem + 8.4vw, 6.25rem);
+}
+
+.rules-block {
+  padding: 50px;
 }
 
 #leaderboard h3 {

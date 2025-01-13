@@ -7,6 +7,7 @@ import {
 import Home from "./components/Home.jsx";
 import Game from "./components/Game.jsx";
 import Leaderboard from "./components/Leaderboard.jsx";
+import Rules from "./components/Rules.jsx";
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <BrowserRouter>
       <header>
         <nav>
+          <a href="/rules">Rules</a>
           <a href="/">Rules</a>
 
         </nav>
@@ -21,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/game" element={<Game />} />
-
+        <Route path="/rules" element={<Rules />} />
       </Routes>
     </BrowserRouter>
   );
