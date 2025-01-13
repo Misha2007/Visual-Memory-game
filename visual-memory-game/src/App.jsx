@@ -15,13 +15,13 @@ function App() {
       <header>
         <nav>
           <a href="/">Rules</a>
-          <a href="/leaderboard">Leader Board</a>
+
         </nav>
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/game" element={<Game />} />
-        <Route path="/leaderboard" element={<Leaderboard />} />
+
       </Routes>
     </BrowserRouter>
   );
