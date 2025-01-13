@@ -16,6 +16,8 @@ function App() {
       <header>
         <nav>
           <a href="/rules">Rules</a>
+          <a href="/">Rules</a>
+          <a href="/leaderboard">Leader Board</a>
         </nav>
       </header>
       <Routes>
