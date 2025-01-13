@@ -1,13 +1,8 @@
 import "./Game.css";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { FaHeart } from "react-icons/fa";
-import { CiHeart } from "react-icons/ci";
-import Card from "./Card";
 
 const Game = () => {
   const [level, setLevel] = useState(2);
-  const [hearts, setHearts] = useState([true, true, true]);
   const [timer, setTimer] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
   const [leaderboardData, setLeaderboardData] = useState([]);
@@ -44,39 +39,6 @@ const Game = () => {
     setIsGameRunning(true);
     setIsGameOver(false);
     setLevel;
-  };
-
-  const handleCardClick = (isActive, index) => {
-    if (isActive) {
-      setActiveStates((prevStates) => {
-        const newStates = [...prevStates];
-        newStates[index] = false;
-        if (newStates.every((card) => !card)) {
-          setLevel((prevLevel) => prevLevel + 1);
-          setTimeout(
-            () => setActiveStates(generateRandomCards(level + 1)),
-            100
-          );
-          handleReset();
-        }
-        return newStates;
-      });
-    } else {
-      setHearts((prevHearts) => {
-        const newHearts = [...prevHearts];
-        const firstActiveIndex = newHearts.indexOf(true);
-        if (firstActiveIndex !== -1) {
-          newHearts[firstActiveIndex] = false;
-        }
-        if (newHearts.every((heart) => !heart)) {
-          setIsGameRunning(false);
-          setIsGameOver(true);
-          setLevel(2);
-          setTimer(0);
-        }
-        return newHearts;
-      });
-    }
   };
 
   useEffect(() => {
@@ -140,43 +102,7 @@ const Game = () => {
 
   return (
     <div id="frame">
-      <div id="main-container">
-        <div id="game-area">
-          <div id="headings">
-            <h2 className="Level">Level {level - 1}</h2>
-            <h2>
-              {hearts.map((isActive, index) =>
-                isActive ? (
-                  <FaHeart key={index} className="heart" />
-                ) : (
-                  <CiHeart key={index} className="heart inactive" />
-                )
-              )}
-            </h2>
-            <h3>Timer: {timer}s</h3>
-          </div>
-          <div id="container">
-            {activeStates.map((isActive, index) => (
-              <Card
-                key={index}
-                active={isActive && "active"}
-                onClick={() => handleCardClick(isActive, index)}
-              />
-            ))}
-          </div>
-          <div id="buttons">
-            <button onClick={handleReset}>
-              Restart <i className="fa-solid fa-arrow-rotate-left"></i>
-            </button>
-            <Link to="/">
-              <button>
-                Home <i className="fa-solid fa-house"></i>
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
-      {/* <div id="second_column">
+      <div id="second_column">
         <div id="leaderboard">
           <h3>Leaderboard</h3>
           <ul>
@@ -202,7 +128,7 @@ const Game = () => {
             </div>
           </div>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };

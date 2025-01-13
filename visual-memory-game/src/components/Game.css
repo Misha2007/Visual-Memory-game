@@ -75,8 +75,10 @@ button {
   flex: 1;
   height: 70px;
   font-size: 18px;
-  background: rgb(235, 235, 253);
-  border: #004 1px solid;
+  background: transparent;
+  border: 1px solid rgb(235, 235, 253);
+  /* border: #004 1px solid; */
+  color: rgb(235, 235, 253);
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -87,6 +89,11 @@ input {
   font-size: 18px;
   margin-right: 10px;
   width: 300px;
+  padding-left: 10px;
+}
+
+input::placeholder {
+  width: 10px;
 }
 
 #username-input {
@@ -100,7 +107,8 @@ input {
 }
 
 button:hover {
-  background: #ddd;
+  background: rgb(235, 235, 253);
+  color: #000;
 }
 
 #buttons a {
@@ -157,17 +165,17 @@ button:last-child {
 }
 
 .block.active {
-  animation: pulse 2s;
+  animation: pulse 3s;
 }
 
 @keyframes pulse {
   0% {
-    background-color: #004;
+    background-color: rgb(213, 235, 253);
   }
   50% {
-    background-color: rgb(235, 235, 253);
+    background-color: rgb(47, 47, 61);
   }
   100% {
-    background-color: rgb(213, 213, 255); /* Same as the default block color */
+    background-color: rgb(213, 235, 253);
   }
 }

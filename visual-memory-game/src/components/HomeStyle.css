@@ -44,17 +44,33 @@ h1 {
   text-align: center;
 }
 
+.pps-3d {
+  font-size: 30px;
+  text-align: center;
+  font-family: "pixeplay";
+}
+
 .vmg {
-  color: rgb(35, 245, 45);
+  color: rgb(61, 110, 64);
+  line-height: 200%;
 }
 
 .vmg-3d {
-  text-shadow: -1px 1px #87997e, -2px 2px #c0d3b9, -3px 3px #c0d3b9,
-    -4px 4px #c0d3b9, -5px 5px #87997e;
+  margin-bottom: 100px;
+  text-shadow: -1px 1px #87997e, -2px 2px #87997e, -3px 3px #87997e,
+    -4px 4px #87997e, -5px 5px #87997e, -6px 6px #87997e, -7px 7px #87997e;
   font-family: "pixeplay";
-  font-size: 90px;
+  font-size: clamp(1rem, -3.1875rem + 13.4vw, 9.375rem);
   src: url("/pixelplay.ttf");
+  line-height: clamp(1rem, -1.625rem + 8.4vw, 6.25rem);
 }
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h2 {
   font-size: 24px;
   margin-bottom: 10px;
@@ -66,24 +82,36 @@ p {
 }
 
 .btnContainer button {
-  background: rgb(235, 235, 253);
-  color: #121212;
-  padding: 15px 30px;
-  border-radius: 5px;
+  background: linear-gradient(135deg, #61c96f, #3d6e40);
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 15px 40px;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
-  box-shadow: -2px 10px rgba(223, 243, 242, 0.7);
-  transform: matrix(30deg);
-  border: 5px #000 solid;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.btnContainer button:hover {
+  background: linear-gradient(135deg, #3d6e40, #61c96f);
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
 }
 
 .btnContainer button:active {
-  transform: translateY(4px);
-  box-shadow: -2px 5px rgba(223, 243, 242, 0.7);
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .btn:hover {
   background: #ddd;
+}
+
+.btn {
+  font-size: 30px;
 }
 
 #leaderboard {

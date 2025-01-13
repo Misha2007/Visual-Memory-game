@@ -23,13 +23,14 @@ const Home = () => {
   return (
     <div className="all">
       <div className="home">
-        {/* <h1 className="vmg vmg-3d">Visual Memory Game</h1>
+        <h1 className="vmg vmg-3d">Flash Mind</h1>
+        <p className="pps-3d">Play and enhance your memory</p>
         <div className="btnContainer">
           <Link to="/game">
             <button className="btn">Start Game</button>
           </Link>
-        </div> */}
-        <div className="innerBackground">
+        </div>
+        {/* <div className="innerBackground">
           <span className="material-symbols-outlined icon"></span>
           <h1 className="vmg">FlashMind</h1>
           <u>
@@ -45,7 +46,7 @@ const Home = () => {
               <button className="btn">Start Game</button>
             </Link>
           </div>
-          {/* <div id="leaderboard">
+          <div id="leaderboard">
             <h3>Leaderboard</h3>
             <ul>
               {leaderboardData.map((entry, index) => (
@@ -54,8 +55,8 @@ const Home = () => {
                 </li>
               ))}
             </ul>
-          </div> */}
-        </div>
+          </div>
+        </div> */}
       </div>
     </div>
   );
